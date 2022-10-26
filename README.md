@@ -5,7 +5,7 @@ The riscof framework will generate a test report file with the name
 - \<instanceID\>-\<test-date\>.html,  where
   -  \<test-date\> is in YYYY-MM-DD format using GMT as the time zone, and
   -  \<instanceID\> is a string that identifies which version of an implementer's core is being tested
-at the conclusion of running the tests, along with coverage report. The coverage report is for the vendors use only, and is not needed for self certification.
+at the conclusion of running the tests, along with a coverage report. The coverage report is for the vendors use only, and is not needed for self certification.
 
 In addition to pass/fail indications for each individual test that is run, the generated report includes:
 -  For any failures, the test case that failed, the expected value, and the actual value found,
@@ -18,12 +18,8 @@ In addition to pass/fail indications for each individual test that is run, the g
    -   reference model (generally Sail, occasionaly Spike), 
    -   Architecture Compatibility Test (ACT) suite version (from https://github.com/riscv-non-isa/riscv-arch-test/blob/main/CHANGELOG.md ).
    -   Framework version (from https://github.com/riscv-software-src/riscof/blob/master/CHANGELOG.md ).
-   
-If the test reports are missing any of the above versioning information, then a plaintext file with that missing information should be created, named <instanceID>-<test-date>-tools.txt
+If the test reports are missing any of the above versioning information, then a plaintext file with that missing information should be created, named \<instanceID\>-\<test-date\>-tools.txt
 
-Vendors should submit their test results by filing a Pull Request that adds the test report (named \<instanceID\>-\<test-date\>.html as above) and the tools report (named \<instanceID\>-\<test-date\>.html as above) into a directory named for the vendor <vendorname> into this repo:	 https://github.com/riscv/riscv-arch-test-reports. Note that the coverage reports should _**not**_ be part of the Pull Request!
+Vendors should submit their test results by filing a Pull Request that adds the test report (named \<instanceID\>-\<test-date\>.html as above) and the tools report (named \<instanceID\>-\<test-date\>.html as above) into a directory named for the vendor \<vendorname\> into this repo:	 https://github.com/riscv/riscv-arch-test-reports. Note that the coverage reports should **not** be part of the Pull Request!
 
 Questions about this policy should be directed to sig-arch-test@lists.riscv.org
-
-
-
