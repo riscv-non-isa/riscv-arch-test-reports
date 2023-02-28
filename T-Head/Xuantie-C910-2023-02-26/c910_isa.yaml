@@ -1,0 +1,74 @@
+hart_ids: [0]
+hart0:
+  ISA: RV64IMAFDCSUZicsr_Zifencei_Zfh_Xthead
+  physical_addr_sz: 32
+  User_Spec_Version: '2.2'
+  supported_xlen: [64]
+  misa:
+   reset-val: 0x800000000094112D
+   rv64:
+     accessible: true
+     mxl:
+       implemented: true
+       type:
+           warl:
+              dependency_fields: []
+              legal:
+                - mxl[1:0] in [0x2]
+              wr_illegal:
+                - Unchanged
+     extensions:
+       implemented: true
+       type:
+           warl:
+              dependency_fields: []
+              legal:
+                - extensions[25:0] bitmask [0x094112D, 0x0000000]
+              wr_illegal:
+                - Unchanged
+  mvendorid:
+      rv32:
+          accessible: false
+      rv64:
+          accessible: true
+          fields: []
+          shadow:
+          shadow_type: rw
+          msb: 31
+          lsb: 0
+          type:
+              ro_constant: 0x5b7
+      address: 3857
+      priv_mode: M
+      reset-val: 0x5b7
+  marchid:
+      rv32:
+          accessible: false
+      rv64:
+          accessible: true
+          fields: []
+          shadow:
+          shadow_type: rw
+          msb: 63
+          lsb: 0
+          type:
+              ro_constant: 0
+      address: 3858
+      priv_mode: M
+      reset-val: 0
+  mimpid:
+      rv32:
+          accessible: false
+      rv64:
+          accessible: true
+          fields: []
+          shadow:
+          shadow_type: rw
+          msb: 63
+          lsb: 0
+          type:
+              ro_constant: 0
+      address: 3859
+      priv_mode: M
+      reset-val: 0
+ 
