@@ -1,0 +1,32 @@
+CPU: c910
+bit_ver: R1S6P2
+bit_file: C910V-ice-MP2-50mhz-EVALUATION_C910_1_6_2_BRANCH_20221125-v1.6.2-202212141743.tar.gz
+
+Toolchain: 2023.01.31
+Toolchain_commit: 65056bdb149c87db4e7223c4e8b5466cf326ff86
+Toolchain_path: https://github.com/riscv-collab/riscv-gnu-toolchain/releases/download/2023.01.31/riscv64-elf-ubuntu-20.04-nightly-2023.01.31-nightly.tar.gz
+
+ref_model: sail c simulator
+ref_mode_commit: 9547a30bf84572c458476591b569a95f5232c1c7
+ref_mode_commit_date: 2023 Jan 26 GMT+8
+ref_model_path: https://github.com/riscv/sail-riscv/tree/master
+
+ACT_framework: riscof 1.25.3
+ACT_commit: a3b7f0c2cf89652b8a0cba3146890c512ff8ba44
+ACT_commit_date: 2023 Feb 8 GMT+8
+ACT_path: https://github.com/riscv-non-isa/riscv-arch-test/tree/main
+
+
+
+failed_cases:
+- rv32i_m/D/src/fmax.d_b1-01.S
+- rv32i_m/D/src/fmin.d_b1-01.S
+- rv32i_m/F/src/fmax_b1-01.S
+- rv32i_m/F/src/fmin_b1-01.S
+failure_reason: C910 implements the F extension of version 2.2(2017.05.07), in which the FMIN.S and FMAX.S instructions were amended to implement the proposed IEEE 754-201x minimumNumber and maximumNumber operations, rather than the IEEE 754-2008 minNum and maxNum operations. These operations differ in their handling of signalling NaNs. In the most recent ISA Specifications (Version 20191213)， if only one input is a signalling NaN, the result is the canonical NaN instead of the non-NaN one.
+
+
+failed_cases:
+- rv64i_m/C/src/cebreak-01.S
+- rv64i_m/privilege/src/ebreak.S
+failure_reason: failure_reason: When running the ACT suite, ebreak instruction served as SW-breakpoint for putting the target in stop mode, enabling ACT to examine the targets. because of this, ebreak test is running, the target behaviour will confuse the ACT so it failed. SW-breakpoints rather than HW-breakpoints were used in C910 when running ACT because C910 has a proprietary debugging module, HW-breakpoint is not compatible with the ACT framework.
