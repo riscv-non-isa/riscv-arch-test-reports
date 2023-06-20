@@ -1,0 +1,25 @@
+CPU: JH7110
+Hardware: VisionFive 2
+
+Toolchain: 2023.03.14
+Toolchain_commit: 170a9a3045207e3ed4d396f6c4f03e1c7978b0e4
+Toolchain_path: https://github.com/riscv-collab/riscv-gnu-toolchain/releases/download/2023.03.14/riscv64-glibc-ubuntu-20.04-nightly-2023.03.14-nightly.tar.gz
+
+ref_model: sail c simulator
+ref_mode_commit: 72b2516d10d472ac77482fd959a9401ce3487f60
+ref_mode_commit_date: 2023 Mar 30 GMT+8
+ref_model_path: https://github.com/riscv/sail-riscv.git
+
+ACT_framework: riscof 1.25.3
+ACT_commit: a25e3155d3a62a042a2c5d976b386e3df5874d70
+ACT_commit_date: 2023 Jan 30 GMT+8
+ACT_path: https://github.com/riscv/riscof.git
+
+riscv-arch-test: 3.6.2
+riscv-arch-test_commit: a3b7f0c2cf89652b8a0cba3146890c512ff8ba44
+riscv-arch-test_commit_date: 2023 Feb 8 GMT+8
+riscv-arch-test_path: https://github.com/riscv-non-isa/riscv-arch-test.git
+
+Waiver Notes:
+- The MISA[1] bit is set in JH7110_isa.yaml.
+Reason: JH7110 implements the MISA[1] bit of the older spec version (December 4, 2021, Released), where it is described as "Tentatively reserved for Bit-Manipulation extension", rather than the newer spec (April 27, 2023, Released) where MISA[1] bit is described as "Reserved".
