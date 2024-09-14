@@ -1,0 +1,78 @@
+hart_ids: [0]
+hart0:
+  ISA: RV64IMAFDCVSUZicbom_Zicbop_Zicboz_Zicntr_Zicond_Zicsr_Zifencei_Zihpm_Zihintpause_Zfh_Zba_Zbb_Zbc_Zbs_Zkt_Sdext_Svnapot
+  User_Spec_Version: '2.3'
+  Privilege_Spec_Version: '1.11'
+  hw_data_misaligned_support: True
+  supported_xlen: [64]
+  physical_addr_sz: 40
+  mtval_update: 0b1011000001010110
+  misa:
+    reset-val: 0x800000000034112D
+    rv32:
+      accessible: false
+    rv64:
+      accessible: true
+      mxl:
+        implemented: true
+        type:
+            warl:
+                dependency_fields: []
+                legal:
+                  - mxl[1:0] in [0x2]
+                wr_illegal:
+                  - Unchanged
+      extensions:
+        implemented: true
+        type:
+            warl:
+                dependency_fields: []
+                legal:
+                  - extensions[25:0] bitmask [0x034112D, 0x0000000]
+                wr_illegal:
+                  - Unchanged
+  mvendorid:
+    rv32:
+      accessible: false
+    rv64:
+      accessible: true
+      fields: []
+      shadow:
+      shadow_type: rw
+      msb: 31
+      lsb: 0
+      type:
+        ro_constant: 0x00000710
+    address: 3857
+    priv_mode: M
+    reset-val: 0x00000710
+  marchid:
+    rv32:
+      accessible: false
+    rv64:
+      accessible: true
+      fields: []
+      shadow:
+      shadow_type: rw
+      msb: 63
+      lsb: 0
+      type:
+        ro_constant: 0x8000000058000001
+    address: 3858
+    priv_mode: M
+    reset-val: 0x8000000058000001
+  mimpid:
+    rv32:
+      accessible: false
+    rv64:
+      accessible: true
+      fields: []
+      shadow:
+      shadow_type: rw
+      msb: 63
+      lsb: 0
+      type:
+        ro_constant: 0x1000000041465b00
+    address: 3859
+    priv_mode: M
+    reset-val: 0x1000000041465b00
