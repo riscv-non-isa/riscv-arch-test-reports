@@ -1,0 +1,21 @@
+CPU: x100
+
+Toolchain: 2024.08.06
+Toolchain_commit: 23d031ef253bbdf1c551f86a3fbf3e24bc842f7d
+Toolchain_path: https://github.com/riscv-collab/riscv-gnu-toolchain/releases/download/2024.08.06/riscv64-elf-ubuntu-22.04-gcc-nightly-2024.08.06-nightly.tar.gz
+
+ref_model: sail c simulator
+ref_model_commit: d5180136eec4e4d960bfacba7bdd9ad1cf02b895
+ref_model_commit_date: 2024 Sep 2 GMT+8
+ref_model_path: https://github.com/riscv/sail-riscv/tree/master
+
+ACT_framework: riscof 1.25.3
+ACT_commit: a3b7f0c2cf89652b8a0cba3146890c512ff8ba44
+ACT_commit_date: 2023 Feb 8 GMT+8
+ACT_path: https://github.com/riscv-non-isa/riscv-arch-test/tree/main
+
+riscv-arch-test: 3.9.1
+riscv-arch-test_commit: 7a306f82bc9c003b8f7278edbb5bfa890fef9239
+riscv-arch-test_commit_date: 2024 Aug 30 GMT+8
+riscv-arch-test_path: https://github.com/riscv-non-isa/riscv-arch-test.git
+
